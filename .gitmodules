@@ -1,0 +1,3 @@
+[submodule "circuito/lib/BareBoneCape"]
+	path = circuito/lib/BareBoneCape
+	url = https://github.com/maskedinterrupt/BareBoneCape.git

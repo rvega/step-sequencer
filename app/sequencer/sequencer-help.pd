@@ -1,4 +1,4 @@
-#N canvas 372 51 840 597 10;
+#N canvas 60 57 941 882 10;
 #N canvas 217 273 1034 281 gui 0;
 #X obj 608 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -35,7 +35,7 @@
 1;
 #X obj 626 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 644 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 644 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 662 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -53,7 +53,7 @@
 1;
 #X obj 788 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 806 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 806 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 824 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -65,7 +65,7 @@
 1;
 #X obj 608 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 626 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 626 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 644 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -77,7 +77,7 @@
 1;
 #X obj 716 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 734 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 734 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 752 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -85,13 +85,13 @@
 1;
 #X obj 788 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 806 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 806 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 824 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 842 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 860 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 860 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 878 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -124,13 +124,13 @@
 #X msg 440 153 14;
 #X msg 468 153 15;
 #X msg 74 153 1;
-#X obj 646 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 646 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 646 197 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 646 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 646 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 646 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 435 210 route 200 201 202 203;
 #X connect 0 0 59 0;
@@ -206,39 +206,57 @@
 #X connect 79 3 78 0;
 #X coords 0 -1 1 1 400 150 1 600 100;
 #X restore 564 61 pd gui;
-#X floatatom 378 123 5 0 0 0 - - -, f 5;
-#X obj 242 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X text 184 117 Instrum;
-#X msg 242 160 switch-instrument;
-#X msg 378 157 tempo \$1;
-#X text 415 121 tempo (milis);
+#X floatatom 380 183 5 0 0 0 - - -, f 5;
+#X msg 380 217 tempo \$1;
+#X text 417 181 tempo (milis);
 #X msg 564 224 button \$1;
-#X obj 378 260 sequencer;
-#X obj 378 295 route 0 1 2 3;
-#X obj 531 490 dac~;
-#X obj 531 420 +~;
-#X obj 531 455 *~ 0.25;
-#X obj 323 358 sample waves/bass.wav;
-#X obj 465 359 sample waves/snare.wav;
-#X obj 605 358 sample waves/hh.wav;
-#X obj 743 357 sample waves/tom.wav;
-#X connect 0 0 7 0;
-#X connect 1 0 5 0;
-#X connect 2 0 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 8 0;
-#X connect 7 0 8 0;
+#X obj 380 557 sequencer;
+#X obj 380 592 route 0 1 2 3;
+#X obj 533 787 dac~;
+#X obj 533 717 +~;
+#X obj 533 752 *~ 0.25;
+#X obj 121 205 moonlib/mknob 25 100 0 1 0 0 empty empty empty -2 -6
+0 8 -262144 -1 -1 9900 1;
+#X obj 121 257 moses 0.5;
+#X obj 104 299 moses 0.25;
+#X obj 185 299 moses 0.75;
+#X msg 103 394 switch-instrument 0;
+#X msg 160 374 switch-instrument 1;
+#X msg 182 350 switch-instrument 2;
+#X msg 241 326 switch-instrument 3;
+#X text 84 223 Bombo;
+#X text 93 188 Redo;
+#X text 144 188 HH;
+#X text 145 222 Tom;
+#X obj 325 655 sample waves/0.wav;
+#X obj 467 656 sample waves/1.wav;
+#X obj 607 655 sample waves/2.wav;
+#X obj 745 654 sample waves/3.wav;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 0 0;
+#X connect 6 0 22 0;
+#X connect 6 1 23 0;
+#X connect 6 2 24 0;
+#X connect 6 3 25 0;
 #X connect 8 0 9 0;
-#X connect 8 1 0 0;
-#X connect 9 0 13 0;
-#X connect 9 1 14 0;
-#X connect 9 2 15 0;
-#X connect 9 3 16 0;
+#X connect 9 0 7 0;
+#X connect 9 0 7 1;
+#X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 10 0;
-#X connect 12 0 10 1;
-#X connect 13 0 11 0;
-#X connect 14 0 11 0;
-#X connect 15 0 11 0;
-#X connect 16 0 11 0;
+#X connect 11 1 13 0;
+#X connect 12 0 14 0;
+#X connect 12 1 15 0;
+#X connect 13 0 16 0;
+#X connect 13 1 17 0;
+#X connect 14 0 5 0;
+#X connect 15 0 5 0;
+#X connect 16 0 5 0;
+#X connect 17 0 5 0;
+#X connect 22 0 8 0;
+#X connect 23 0 8 0;
+#X connect 24 0 8 0;
+#X connect 25 0 8 0;

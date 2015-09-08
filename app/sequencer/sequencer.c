@@ -1,5 +1,3 @@
-/////////////////////////////////////////////////////////////////////////
-// 
 //  Sequencer
 //  Copyright (C) 2015 Rafael Vega <rvega@elsoftwarehamuerto.org>
 //  Copyright (C) 2015 Miguel Vargas <miguelito.vargasf@gmail.com>
@@ -53,7 +51,7 @@ t_class *sequencer_class;
 // 
 
 // Received "switch-instrument" message.
-static void sequencer_switch_instrument(t_sequencer* x) {
+static void sequencer_switch_instrument(t_sequencer* x, t_float f) {
    // Turn off previous instrument led
    t_atom list[2];
    SETFLOAT(list, 200 + x->current_instrument);
@@ -61,7 +59,7 @@ static void sequencer_switch_instrument(t_sequencer* x) {
    outlet_list(x->outlet1, gensym("list"), 2, list);
 
    // Current instrument variable
-   x->current_instrument ++;
+   x->current_instrument = f;
    x->current_instrument %= 4;
 
    // Turn on current instrument led
@@ -181,7 +179,7 @@ static void sequencer_free(t_sequencer *x) {
 
 void sequencer_setup(void) {
    sequencer_class = class_new(gensym("sequencer"), (t_newmethod)sequencer_new, (t_method)sequencer_free, sizeof(t_sequencer), CLASS_DEFAULT, (t_atomtype)0);
-   class_addmethod(sequencer_class, (t_method)sequencer_switch_instrument, gensym("switch-instrument"), 0);
+   class_addmethod(sequencer_class, (t_method)sequencer_switch_instrument, gensym("switch-instrument"), A_DEFFLOAT, 0);
    class_addmethod(sequencer_class, (t_method)sequencer_tempo, gensym("tempo"), A_DEFFLOAT, 0);
    class_addmethod(sequencer_class, (t_method)sequencer_button, gensym("button"), A_DEFFLOAT, 0);
    class_addmethod(sequencer_class, (t_method)sequencer_loadbang, gensym("loadbang"), 0);

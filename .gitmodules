@@ -1,3 +1,6 @@
 [submodule "circuito/lib/BareBoneCape"]
 	path = circuito/lib/BareBoneCape
 	url = https://github.com/maskedinterrupt/BareBoneCape.git
+[submodule "app/libs/beaglebone-pruio"]
+	path = app/libs/beaglebone-pruio
+	url = https://github.com/outer-space-sounds/beaglebone-pruio.git

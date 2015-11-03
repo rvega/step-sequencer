@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/r/Projects/StepSequencer/repo/circuito/StepSequencer.sch)
-    (date "Tue 03 Nov 2015 10:22:59 AM COT")
+    (date "Tue 03 Nov 2015 02:59:51 PM COT")
     (tool "Eeschema 0.201508280901+6131~28~ubuntu14.04.1-product")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -538,60 +538,6 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 56267B31)))
   (libparts
-    (libpart (lib device) (part SW_PUSH)
-      (description Button)
-      (fields
-        (field (name Reference) SW)
-        (field (name Value) SW_PUSH))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
-    (libpart (lib device) (part R)
-      (description Resistor)
-      (footprints
-        (fp R_*)
-        (fp Resistor_*))
-      (fields
-        (field (name Reference) R)
-        (field (name Value) R))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part LED)
-      (footprints
-        (fp LED-3MM)
-        (fp LED-5MM)
-        (fp LED-10MM)
-        (fp LED-0603)
-        (fp LED-0805)
-        (fp LED-1206)
-        (fp LEDV))
-      (fields
-        (field (name Reference) D)
-        (field (name Value) LED))
-      (pins
-        (pin (num 1) (name K) (type passive))
-        (pin (num 2) (name A) (type passive))))
-    (libpart (lib conn) (part CONN_01X01)
-      (footprints
-        (fp Pin_Header_Straight_1X01)
-        (fp Pin_Header_Angled_1X01)
-        (fp Socket_Strip_Straight_1X01)
-        (fp Socket_Strip_Angled_1X01))
-      (fields
-        (field (name Reference) P)
-        (field (name Value) CONN_01X01))
-      (pins
-        (pin (num 1) (name P1) (type passive))))
-    (libpart (lib device) (part POT)
-      (description Potentionmetre)
-      (fields
-        (field (name Reference) RV)
-        (field (name Value) POT))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))
-        (pin (num 3) (name 3) (type passive))))
     (libpart (lib beagleboard) (part BEAGLEBONE_BLACK)
       (footprints
         (fp BEAGLEBONE_BLACK))
@@ -690,14 +636,68 @@
         (pin (num B43) (name P43) (type passive))
         (pin (num B44) (name P44) (type passive))
         (pin (num B45) (name P45) (type passive))
-        (pin (num B46) (name P46) (type passive)))))
+        (pin (num B46) (name P46) (type passive))))
+    (libpart (lib device) (part R)
+      (description Resistor)
+      (footprints
+        (fp R_*)
+        (fp Resistor_*))
+      (fields
+        (field (name Reference) R)
+        (field (name Value) R))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part SW_PUSH)
+      (description Button)
+      (fields
+        (field (name Reference) SW)
+        (field (name Value) SW_PUSH))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
+    (libpart (lib device) (part POT)
+      (description Potentionmetre)
+      (fields
+        (field (name Reference) RV)
+        (field (name Value) POT))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))
+        (pin (num 3) (name 3) (type passive))))
+    (libpart (lib device) (part LED)
+      (footprints
+        (fp LED-3MM)
+        (fp LED-5MM)
+        (fp LED-10MM)
+        (fp LED-0603)
+        (fp LED-0805)
+        (fp LED-1206)
+        (fp LEDV))
+      (fields
+        (field (name Reference) D)
+        (field (name Value) LED))
+      (pins
+        (pin (num 1) (name K) (type passive))
+        (pin (num 2) (name A) (type passive))))
+    (libpart (lib conn) (part CONN_01X01)
+      (footprints
+        (fp Pin_Header_Straight_1X01)
+        (fp Pin_Header_Angled_1X01)
+        (fp Socket_Strip_Straight_1X01)
+        (fp Socket_Strip_Angled_1X01))
+      (fields
+        (field (name Reference) P)
+        (field (name Value) CONN_01X01))
+      (pins
+        (pin (num 1) (name P1) (type passive)))))
   (libraries
-    (library (logical device)
-      (uri /usr/share/kicad/library/device.lib))
+    (library (logical beagleboard)
+      (uri /home/r/Projects/StepSequencer/repo/circuito/lib/BareBoneCape/lib/beagleboard.lib))
     (library (logical conn)
       (uri /usr/share/kicad/library/conn.lib))
-    (library (logical beagleboard)
-      (uri /home/r/Projects/StepSequencer/repo/circuito/lib/BareBoneCape/lib/beagleboard.lib)))
+    (library (logical device)
+      (uri /usr/share/kicad/library/device.lib)))
   (nets
     (net (code 1) (name /led2_3)
       (node (ref R2_3) (pin 2))

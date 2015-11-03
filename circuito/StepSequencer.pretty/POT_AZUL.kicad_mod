@@ -14,4 +14,9 @@
   (pad 2 thru_hole circle (at 0 0) (size 2 2) (drill 1.1) (layers *.Cu *.Mask F.SilkS))
   (pad 1 thru_hole circle (at -2.5 0) (size 2 2) (drill 1.1) (layers *.Cu *.Mask F.SilkS))
   (pad "" thru_hole rect (at -5.3 -7) (size 3.2 3.2) (drill 2.2) (layers *.Cu *.Mask F.SilkS))
+  (model ../../../../../home/r/Projects/StepSequencer/repo/circuito/3d/pot.wrl
+    (at (xyz -0.19685 0 0))
+    (scale (xyz 0.3937007874015748 0.3937007874015748 0.3937007874015748))
+    (rotate (xyz 0 0 0))
+  )
 )

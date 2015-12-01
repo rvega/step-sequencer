@@ -1,4 +1,4 @@
 (fp_lib_table
   (lib (name beagleboard)(type Legacy)(uri "$(KIPRJMOD)/lib/BareBoneCape/lib/beagleboard.mod")(options "")(descr ""))
-  (lib (name StepSequencer)(type KiCad)(uri "$(KIPRJMOD)/StepSequencer.pretty")(options "")(descr ""))
+  (lib (name StepSequencer)(type KiCad)(uri ./StepSequencer.pretty)(options "")(descr ""))
 )
